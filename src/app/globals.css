@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: 248 250 252;
+  --foreground: 15 23 42;
+  --muted: 100 116 139;
+  --surface: 255 255 255;
+  --border: 226 232 240;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 9 12 17;
+  --foreground: 241 245 249;
+  --muted: 148 163 184;
+  --surface: 17 22 29;
+  --border: 38 47 57;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: rgb(var(--background));
+  color: rgb(var(--foreground));
+}
+
+::selection {
+  background: #a3e635;
+  color: #17200b;
+}
+
+:focus-visible {
+  outline: 2px solid #a3e635;
+  outline-offset: 4px;
+}
+
+.section-wrap {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+}
+
+.section-space {
+  @apply py-20 sm:py-28 lg:py-32;
+}
+
+.eyebrow {
+  @apply mb-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-lime-600 dark:text-lime-400;
+}
+
+.section-title {
+  @apply font-display text-3xl font-semibold tracking-[-0.04em] text-slate-900 dark:text-slate-100 sm:text-4xl lg:text-5xl;
+}
+
+.surface-card {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--border));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
